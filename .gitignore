@@ -3,8 +3,5 @@ elm-stuff
 # elm-repl generated files
 repl-temp-*
 
-*/node_modules
+.direnv
 
-# vim temp files
-*.swp
-*.swo
