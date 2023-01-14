@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+    <script type="text/javascript" src="elm-google-sign-in.js"></script>
+    <script type="text/javascript" src="elm.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    let googleSignOutComplete = new EventTarget();
+    
+    let elm = document.createElement('div');
+    document.body.appendChild(elm);
+    
+    let app = Elm.Main.init({
+        node: elm,
+        flags: googleSignOutComplete
+    });
+    
+    app.ports.googleSignOut.subscribe(clientId => {
+      ElmGoogleSignIn.signOut({
+        port: app.ports.googleSignOutComplete,
+        clientId: clientId,
+        })
+    });
+    </script>
+  </body>
+</html>
