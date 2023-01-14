@@ -7,8 +7,8 @@ The example uses the newer Google Identity Services library, opposed to [Google 
 To use this in your own projects, you need:
 
 1. a [Google Client ID](https://support.google.com/cloud/answer/6158849);
-2. HTML for the Google button (see [Google's code generator](https://developers.google.com/identity/gsi/web/tools/configurator))r;,
-3. and, some ports/flags in your `html/js` (see `example/index.html` for details).
+2. HTML for the Google button (see [Google's code generator](https://developers.google.com/identity/gsi/web/tools/configurator));
+3. and some ports/flags in your `html/js` (see `example/index.html` for details).
 
 
 # Running the example
