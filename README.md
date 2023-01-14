@@ -1,4 +1,4 @@
-# About
+# How To
 
 This Elm package allows you to sign-in with Google credentials in an Elm application.
 
@@ -6,29 +6,31 @@ The example uses the newer Google Identity Services library, opposed to [Google 
 
 To use this in your own projects, you need:
 
-- a [Google Client ID](https://support.google.com/cloud/answer/6158849);
-- you need to add HTML for the Google button (see [Google's code generator](https://developers.google.com/identity/gsi/web/tools/configurator)),
-- and you need to add some ports/flags (see `example/index.html`).
+1. a [Google Client ID](https://support.google.com/cloud/answer/6158849);
+2. HTML for the Google button (see [Google's code generator](https://developers.google.com/identity/gsi/web/tools/configurator))r;,
+3. and, some ports/flags in your `html/js` (see `example/index.html` for details).
 
 
 # Running the example
 
-To run the code in `example` all you need is `elm` and optionally `elm-live`.
-Note that you will also need to update the Google Client Id in both `example/src/Main.elm` and `example/index.html`.
+To run the code in `example` all you need is `elm` and optionally, `elm-live`.
 
-(from the `example` directory)
+Note that you will also need to update the Google Client ID in both `example/src/Main.elm` and `example/index.html`.
 
-With `elm-live`:
+
+## With `elm-live`:
 
 ```
+cd example
 elm-live src/Main.elm -- --output=elm.js
 ```
 
-Without `elm-live`:
+## Without `elm-live`:
 
 1. Build with `elm make`
 
 ```
+cd example
 elm make src/Main.elm --output=elm.js
 ```
 
