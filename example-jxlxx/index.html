@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-    <script type="text/javascript" src="elm-google-sign-in.js"></script>
     <script type="text/javascript" src="elm.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
+    <div id="g_id_onload"
+       data-client_id="789723491626-vf2tt6ei0fue08ajqjtr9k3nkqfe1pn2.apps.googleusercontent.com"
+       data-context="signin"
+       data-ux_mode="popup"
+       data-login_uri="http://localhost:8000"
+       data-auto_prompt="false">
+    </div>
+      
+    <div class="g_id_signin"
+       data-type="standard"
+       data-shape="rectangular"
+       data-theme="outline"
+       data-text="signin_with"
+       data-size="large"
+       data-logo_alignment="left">
+    </div>
     <script type="text/javascript">
     let googleSignOutComplete = new EventTarget();
     
