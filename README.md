@@ -1,5 +1,15 @@
+# About
 
-Forked from: https://github.com/cedric-h/elm-google-sign-in
+This Elm package allows you to sign-in with Google credentials in an Elm application.
+
+The example uses the newer Google Identity Services library, opposed to [Google Sign-In](https://developers.google.com/identity/gsi/web/guides/migration).
+
+To use this in your own projects, you need:
+
+- a [Google Client ID](https://support.google.com/cloud/answer/6158849);
+- you need to add HTML for the Google button (see [Google's code generator](https://developers.google.com/identity/gsi/web/tools/configurator)),
+- and you need to add some ports/flags (see `example/index.html`).
+
 
 # Running the example
 
@@ -19,13 +29,13 @@ Without `elm-live`:
 1. Build with `elm make`
 
 ```
-elm make src/Main.elm
+elm make src/Main.elm --output=elm.js
 ```
 
 2. Run with `elm reactor`
 
 
-# A note on Google Client Ids
+# A note on Google Client IDs
 
 If you are testing this locally, when you create your OAuth 2.0 Client ID, you must add
 `http://localhost` AND `http://localhost:8000`
@@ -36,4 +46,7 @@ If you are testing this locally, when you create your OAuth 2.0 Client ID, you m
 
 Otherwise, it won't work.
 
+# Credits
+
+Forked from: https://github.com/cedric-h/elm-google-sign-in
 
