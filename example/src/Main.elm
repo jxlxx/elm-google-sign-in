@@ -21,10 +21,16 @@ main =
     
     
 id : GoogleSignIn.ClientId
-id = GoogleSignIn.Id "789723491626-vf2tt6ei0fue08ajqjtr9k3nkqfe1pn2"
+id = GoogleSignIn.Id "789723491626-6p01agh94gidiaesvev5saq6c6a30fmn"
    
+
+-- Send to JS
 port googleSignOut : E.Value -> Cmd msg
+
+
+-- Receive from JS
 port googleSignOutComplete : (E.Value -> msg) -> Sub msg
+port googleSignIn : (E.Value -> msg) -> Sub msg
    
    
    
@@ -63,8 +69,9 @@ update msg model =
   
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    googleSignOutComplete (\a -> SignOutComplete)
- 
+     Sub.batch
+        [ googleSignOutComplete (\a -> SignOutComplete)
+        ]
  
  
  -- VIEW
@@ -80,10 +87,36 @@ view model =
                 , div [] [ button [ onClick BeginSignOut ] [ text "Sign Out" ] ]
                 ]
         Nothing ->
-            GoogleSignIn.view 
-            [ GoogleSignIn.onSignIn SignIn
-            , GoogleSignIn.idAttr id
+            div []
+            [ text "Hello!!!"
+            , GoogleSignIn.view 
+                [ GoogleSignIn.onSignIn SignIn
+                , GoogleSignIn.idAttr id
+                ] 
             ]
     ]
     
+-- type alias Profile =
+--     { id : String
+--     , idToken : String
+--     , name : String
+--     , givenName : String
+--     , familyName : String
+--     , imageUrl : String
+--     , email : Maybe String
+--     }
     
+    
+-- profileDecoder : Decoder Profile
+-- profileDecoder =
+--     Decode.map7
+--         Profile
+--             (Decode.field "id" Decode.string)
+--             (Decode.field "idToken" Decode.string)
+--             (Decode.field "name" Decode.string)
+--             (Decode.field "givenName" Decode.string)
+--             (Decode.field "familyName" Decode.string)
+--             (Decode.field "imageUrl" Decode.string)
+--             (Decode.field "email" (Decode.nullable Decode.string))
+            
+     
