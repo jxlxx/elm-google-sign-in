@@ -7,41 +7,6 @@ module GoogleSignIn exposing
     , ClientId(..), encodeId
     )
 
-{-| Elm bindings to the "Sign in With Google" widget
-
-See the github for more information: <https://github.com/cedric-h/elm-google-sign-in>
-
-
-## View
-
-@docs view, styledView
-
-
-## Attribute Wrapper
-
-@docs Attribute
-
-
-## Properties
-
-@docs idAttr
-
-
-## Listeners
-
-@docs onSignIn
-
-
-## Profile
-
-@docs Profile
-
-
-## ClientId & co.
-
-@docs ClientId, encodeId
-
--}
 
 import Html as PlainHtml
 import Html.Styled as Html exposing (Html)
